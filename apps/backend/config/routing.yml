@@ -1,0 +1,77 @@
+shipping_transaction_detail:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ShippingTransactionDetail
+    module:               shipping_transaction_detail
+    prefix_path:          /shipping_transaction_detail
+    column:               id
+    with_wildcard_routes: true
+
+shipping_transaction:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ShippingTransaction
+    module:               shipping_transaction
+    prefix_path:          /shipping_transaction
+    column:               id
+    with_wildcard_routes: true
+
+user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Staff
+    module:               user
+    prefix_path:          /user
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: user, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+
+sf_guard_signin:
+  url: /login
+  param:
+    module: sfGuardAuth
+    action: signin
+
+sf_guard_signout:
+  url: /logout
+  param:
+    module: sfGuardAuth
+    action: signout
+
+sf_guard_password:
+  url: /request_password
+  param:
+    module: sfGuardAuth
+    action: password
+
+sf_gaurd_user:
+  url: /guard/user
+  param:
+    module: sfGuardUser
+
+sf_guard_group:
+  url: /guard/group
+  param:
+    module: sfGuardGroup
+
+sf_guard_permission:
+  url: /guard/permission
+  param:
+    module: sfGuardPermission
+

@@ -1,0 +1,55 @@
+sfGuardUser:
+  User_admin:
+    first_name:     John
+    last_name:      Doe
+    email_address:  john.doe@gmail.com
+    username:       admin
+    password:       admin
+    is_super_admin: true
+    Groups:         [Group_req_admin]
+Staff:
+  User_admin:
+    sf_guard_user_id: 1
+sfGuardGroup:
+  Group_req_admin:
+    id:             1
+    name:           req_admin
+    description:    Requisition Admin
+    Permissions:    [Permission_req_admin]
+  Group_req_approver:
+    id:             2
+    name:           req_approver
+    description:    Requisition Approver
+    Permissions:    [Permission_req_approver]
+  Group_req_user:
+    id:             3
+    name:           req_user
+    description:    Requisition User
+    Permissions:    [Permission_req_user]
+  Group_ass_admin:
+    id:             11
+    name:           am_admin
+    description:    Asset Management Admin
+    Permissions:    [Permission_ass_admin]
+  Group_ass_user:
+    id:             12
+    name:           am_user
+    description:    Asset Management User
+    Permissions:    [Permission_ass_user]
+
+sfGuardPermission:
+  Permission_req_admin:
+    name:           requisition admin
+    description:    Requisition Administrator permission
+  Permission_req_approver:
+    name:           requisition approver
+    description:    Requisition Approver permission
+  Permission_req_user:
+    name:           requisition user
+    description:    Requisition User permission
+  Permission_ass_admin:
+    name:           asset management admin
+    description:    Asset Management Administrator
+  Permission_ass_user:
+    name:           asset management user
+    description:    Asset Management User

@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ShippingTransaction
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          shipping_transaction
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Shipping Transaction Managament
+        display: [destination, expected_date, isactive]
+      filter:  ~
+      form:    ~
+      edit:
+        title: Modifying Shipping Transaction
+      new:
+        title: Shipping Transaction Creation 

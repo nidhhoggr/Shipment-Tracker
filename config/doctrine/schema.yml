@@ -1,0 +1,53 @@
+detect_relations: true
+
+Staff:
+  actAs: [Timestampable]
+  columns:
+    id:               { type: integer, primary: true, autoincrement: true }
+    sf_guard_user_id: { type: integer, notnull: true }
+    ip_address:       { type: string(255) }
+    session_key:      { type: integer(10) }
+  relations:
+    User:
+      class: sfGuardUser
+      local: sf_guard_user_id
+      foreign: id
+      type: one
+      foreignType: one
+      foreignAlias: sfGuardUser
+      onDelete: cascade
+
+ShippingTransaction:
+  actAs: [Timestampable]
+  columns: 
+    id:                      { type: integer, primary: true, autoincrement: true }
+    expected_date:           { type: date }
+    staff_id:                { type: interger, notnull: true }
+    destination:             { type: string(32) }
+    note:                    { type: string(256) }
+    isactive:                { type: boolean, default: 1 } 
+  relations:
+    ShippingTransactioniDetail:
+      class: ShippingTransactionDetail
+      local: id
+      foreign: shipping_transaction_id
+      type: one
+      foreignType: one
+      foreignAlias: ShippingTransaction
+      onDelete: cascade
+
+ShippingTransactionDetail:
+  actAs: [Timestampable]
+  columns:
+    id:                      { type: integer, primary: true, autoincrement: true }
+    shipping_transaction_id: { type: integer, notnull: true }
+    barcode:                 { type: integer }  
+  relations:
+    ShippingTransaction:
+      class: ShippingTransaction
+      local: shipping_transaction_id
+      foreign: id
+      type: one
+      foreignType: one
+      foreignAlias: ShippingTransactionDetail
+      onDelete: cascade

@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ShippingTransactionDetail
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          shipping_transaction_detail
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Shipping Transaction Management
+        display: [barcode,destination,user,isactive] 
+      filter:  ~
+      form:    ~
+      edit:
+        title: Modifying Shipping Transaction
+      new:
+        title: Shipping Transaction Creation
