@@ -7,12 +7,12 @@
  * 
  * @property integer $id
  * @property integer $shipping_transaction_id
- * @property integer $barcode
+ * @property string $barcode
  * @property ShippingTransaction $ShippingTransaction
  * 
  * @method integer                   getId()                      Returns the current record's "id" value
  * @method integer                   getShippingTransactionId()   Returns the current record's "shipping_transaction_id" value
- * @method integer                   getBarcode()                 Returns the current record's "barcode" value
+ * @method string                    getBarcode()                 Returns the current record's "barcode" value
  * @method ShippingTransaction       getShippingTransaction()     Returns the current record's "ShippingTransaction" value
  * @method ShippingTransactionDetail setId()                      Sets the current record's "id" value
  * @method ShippingTransactionDetail setShippingTransactionId()   Sets the current record's "shipping_transaction_id" value
@@ -38,8 +38,10 @@ abstract class BaseShippingTransactionDetail extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              ));
-        $this->hasColumn('barcode', 'integer', null, array(
-             'type' => 'integer',
+        $this->hasColumn('barcode', 'string', 32, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 32,
              ));
     }
 

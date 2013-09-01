@@ -6,7 +6,7 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-  <title>Primal Innovations</title>
+  <title>Shipment Tracker</title>
 
   <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css' />
 
@@ -31,7 +31,7 @@
 
 			<div id="logo">
 
-				<h1><a href="#">Primal <span>Innovations</span></a></h1>
+				<h1><a href="#">Shipment <span>Tracker</span></a></h1>
 
 			</div>
 
@@ -142,7 +142,7 @@
 
 		<div id="footer">
 
-			<p>Copyright (c) 2012 Primal Innovations LLC. All rights reserved.</p>
+			<p>Copyright (c) 2012 Supraliminal Solutions LLC. All rights reserved.</p>
 
 		</div>
 

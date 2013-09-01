@@ -25,7 +25,7 @@ abstract class BaseShippingTransactionDetailForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'                      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'shipping_transaction_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ShippingTransaction'))),
-      'barcode'                 => new sfValidatorInteger(array('required' => false)),
+      'barcode'                 => new sfValidatorString(array('max_length' => 32)),
       'created_at'              => new sfValidatorDateTime(),
       'updated_at'              => new sfValidatorDateTime(),
     ));
