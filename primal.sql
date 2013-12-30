@@ -192,7 +192,7 @@ CREATE TABLE `sf_guard_user` (
 
 LOCK TABLES `sf_guard_user` WRITE;
 /*!40000 ALTER TABLE `sf_guard_user` DISABLE KEYS */;
-INSERT INTO `sf_guard_user` VALUES (1,'John','Doe','john.doe@gmail.com','admin','sha1','54c0120204a6e2014e05c8323e52da22','453fb13d71610a6c49a2b19eb5f5991711826f70',1,1,'2013-08-31 22:44:44','2013-08-31 22:44:36','2013-08-31 22:44:44');
+INSERT INTO `sf_guard_user` VALUES (1,'John','Doe','john.doe@gmail.com','admin','sha1','54c0120204a6e2014e05c8323e52da22','453fb13d71610a6c49a2b19eb5f5991711826f70',1,1,'2013-08-31 23:13:01','2013-08-31 22:44:36','2013-08-31 23:13:01');
 /*!40000 ALTER TABLE `sf_guard_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -301,7 +301,7 @@ CREATE TABLE `shipping_transaction_detail` (
   PRIMARY KEY (`id`),
   KEY `shipping_transaction_id_idx` (`shipping_transaction_id`),
   CONSTRAINT `sssi` FOREIGN KEY (`shipping_transaction_id`) REFERENCES `shipping_transaction` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -310,7 +310,7 @@ CREATE TABLE `shipping_transaction_detail` (
 
 LOCK TABLES `shipping_transaction_detail` WRITE;
 /*!40000 ALTER TABLE `shipping_transaction_detail` DISABLE KEYS */;
-INSERT INTO `shipping_transaction_detail` VALUES (1,1,345234567,'2013-08-31 22:46:11','2013-08-31 22:46:11'),(2,1,234435566,'2013-08-31 22:47:51','2013-08-31 22:47:51'),(3,2,287364645,'2013-08-31 22:51:18','2013-08-31 22:51:18'),(4,2,291837454,'2013-08-31 22:51:29','2013-08-31 22:51:29');
+INSERT INTO `shipping_transaction_detail` VALUES (1,1,345234567,'2013-08-31 22:46:11','2013-08-31 22:46:11'),(2,1,234435566,'2013-08-31 22:47:51','2013-08-31 22:47:51'),(3,2,287364645,'2013-08-31 22:51:18','2013-08-31 22:51:18'),(4,2,291837454,'2013-08-31 22:51:29','2013-08-31 22:51:29'),(5,2,312561253213312,'2013-08-31 22:56:25','2013-08-31 22:56:25');
 /*!40000 ALTER TABLE `shipping_transaction_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -353,4 +353,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-08-31 22:52:59
+-- Dump completed on 2013-08-31 23:15:43
